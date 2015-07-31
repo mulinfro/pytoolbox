@@ -3,18 +3,19 @@ from oscmd import *
 from pytool import *
 from util import *
 from pipe import *
+from pred import *
 
 def cmdHistory(file = 'history'):
     func = ['history','up','addToHistory','down','loadHis']
     his, cnt, length = [],0,0
     def loadHistory():
-        his = getFileLines(file)
+        his = getLines(file)
         length = len(his)
         cnt = length
     def history(n=None):
         if n is None: n = len(his)
-        n = max(length - n, 0)
-        return history[n:]
+        n = max([length - n, 0])
+        return his[n:]
     def addToHistory(commd):
         if commd not in func:
             addLineToFile(file,commd)
@@ -24,13 +25,12 @@ def cmdHistory(file = 'history'):
         tmp = cnt - n
         if cnt < 0: return "failed: no more pre-history"
         cnt = tmp
-        return history[cnt]
+        return his[cnt]
     def down(n=1):
         tmp = cnt + n
         if cnt >= length: return "failed: to end of history"
         cnt = tmp
-        return history[cnt]
-    loadHistory()
+        return his[cnt]
     return (loadHistory,history,addToHistory,up,down)
 
 def preDefinedFunctions():
@@ -71,7 +71,8 @@ def getConfDict(file):
     for line in lines:
         comms = line.split('::',1)
         comms = [c.strip() for c in comms]
-        dct[comms[0]] = comms[1]
+        if len(comms) >= 2:
+            dct[comms[0]] = comms[1]
     return dct
 
 # alias manager interface
@@ -106,9 +107,11 @@ hasVar, getVar, addVar = contextVars()
 PREFIXS = {'!','~','%'}
 getAlias, addAlias,allAlias = alias()
 (loadHistory,history,addToHistory,up,down)  = cmdHistory()
+loadHistory()
 
 # global tmp; used in assign
 _valtmp = None
 
 if __name__ == '__main__':
+    print history()
     pass

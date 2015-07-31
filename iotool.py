@@ -45,40 +45,42 @@ def load(file):
 
 
 # output a string to file
-def write2file(file,str2w, tp='w'):
+def write(file,str2w, tp='w'):
     with open(file,tp) as f:
         f.write(str2w)
-    return ioflag('write2file')
+    return ioflag('write')
 
 # add a new line to file
 def addLineToFile(file,str2w):
-    str2w = str2w + '\n'
-    write2file(file,str2w,'a')
+    write(file,str2w + '\n', 'a')
     return ioflag('addLineToFile')
 
 # var dump to file; use json
 def dump(file,var,tp='w'):
     obj = json.dumps(var)
-    write2file(file,obj,tp)
+    write(file,obj,tp)
     return ioflag('dump')
 
 # print list to stdout
 # each element is a line
-def printList(lt):
+def showList(lt):
     for e in lt:
         print e
     return ioflag('printList')
 
-def printIdxList(lt):
+def showIdxList(lt):
     for idx,e in zip(xrange(len(lt)), lt):
         print idx,  ':\t' , e
     return ioflag('printIdxList')
 
+def list2lines(dlist):
+    lt = [ str(ele) for ele in dlist]
+    return "\n".join(lt)
+
 # write list to a file
 def writeList(out,dlist):
     with open(out,'w') as of:
-        for ele in dlist:
-            of.write(str(ele) + '\n')
+        of.write(list2lines(dlist))
     return ioflag('writeList')
 
 if __name__ == '__main__':

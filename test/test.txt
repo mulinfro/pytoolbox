@@ -1,0 +1,33 @@
+ls "."
+"hello world"
+s = "hello world"
+a = [1,2,3,4,5,6]
+b = {"w":1,"c":2}
+(1+2*3 % 5)
+1 + 2
+((50 * 100) - 4999)
+( 5 > 4)
+([e*e for e in a])
+l = (lambda x,y: x+y)
+gt 5 4
+max  5 4
+first a
+first s
+f = first $ reverse
+sum $ (tail)
+f a
+gt (f a) 1
+isContain ".py" "shell.py"
+pred = isContain ".py"
+ls "." | all pred
+ls "." | any pred
+files = ls "."
+files
+files = ls "." | filter pred 
+files
+
+echo "\n\n++++++++++++++++++++++++++++++++++++++++++++++++++"
+history 30
+history  | tail 20 | list2lines > "test.sh"
+sh test.sh
+~(lambda x:x*2) (range 10) | filter (lt 3)

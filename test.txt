@@ -1,1 +1,8 @@
-ls "." | cat > "out"
+a = [1,2,3,4,5,6]
+b = first $ reverse a
+b
+ls "."
+files = ls "."
+files
+files =  ls "." | filter (isContain ".py") 
+files

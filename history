@@ -4,3 +4,101 @@ cd "from util import prompt
 cd "F:\DBGroup"
 history 2
 history 3
+
+
+1+2
+(1+2)
+
+(3+4+5)
+quit
+quit
+quit
+quit
+quit
+quit
+quit
+quit
+quit
+r'\\'
+len r'\\'
+a = [1,2,3,4]
+a
+first $ reverse a
+first $ reverse a
+b = first $ reverse a
+b()
+quit
+quit
+quit
+cd "test"
+49*100
+(49*100)
+(gt 5 6)
+gt 5 6
+gt 5 6
+
+gt 5 6
+max 5 4
+f = max 5 4
+f()
+ls "."
+max 5 4
+gt 5 4
+max 5 4
+max 4 5
+max 1 2
+max 1
+max [1,2,3]
+dsfa = 1
+
+sadf = 1
+sadf
+history(2)
+history 3
+isContain ".py" "shell.py"
+a = [1,2,3,4,5,6]
+gt $ first $ reverse a 1
+gt ( first $ reverse a) 1
+last
+last [1,2,3,4]
+snd
+rest
+take 2 [1,2,3,4,5,6]
+ls "." | all pred
+pred = isContain ".py"
+ls "." | all pred
+ls "." | any pred
+echo "\n\n"
+echo "\n\n++++++++++++++++++++++++++++++++++"
+1+1
+1 + 2
+sum
+quit
+a = [1,2,3]
+tail 2 a
+tail 1 a
+tail -1 a
+a = [1,2,3]
+tail -1 a
+history  | tail 20 > test.sh
+history  | tail 20 > "test.sh"
+history  | tail 20
+history  | tail 20 > "test.sh"
+history 1
+history 2
+history  | tail 20 > test.sh
+history  | tail 20 > "test.sh"
+history  | tail 20 > "test.sh"
+sh "test.sh"
+history  | tail 20 | list2lines > "test.sh"
+history  | tail 20 | list2lines
+history  | tail 20
+history  | tail 20 | list2lines > "test.sh"
+history  | tail 20 | list2lines
+history  | tail 20
+history  | len
+~(lambda x: x*2) [1,2,3,4,5]
+~(lambda x: x*2) [1,2,3,4,5] | filter (gt 3)
+~(lambda x: x*2) [1,2,3,4,5] | filter (lt 3)
+range 10
+first $ reverse [1,2,3,4]

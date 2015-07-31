@@ -10,6 +10,15 @@ def encase2list(arg):
     else:
         return [arg]
 
+def reg(pattern):
+    return re.compile(pattern)
+
+def loop(func):
+    while True:
+        flag = func()
+        if not flag: break
+    return 'loop finish'
+
 def wraplist(arg):
     return [arg]
 
@@ -23,6 +32,9 @@ def cdr(iterable):
 
 def cadr(iterable):
     return car(cdr(iterable))
+
+def caar(iterable):
+    return car(car(iterable))
 
 def cons(a,b):
     return (a,b)
@@ -44,8 +56,7 @@ def replace(word,toword,line, num=None):
     return toword.join(spts)
 
 
-def splitBy(mode,text):
-    modes = mode.split('|')
+def splitBy(modes,text):
     for m in modes:
         if isContain(m,text):
             return text.split(m)

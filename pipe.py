@@ -46,24 +46,12 @@ def type(obj):
 
 
 def take(qte, iterable):
-    "Yield qte of elements in the given iterable."
-    for item in iterable:
-        if qte > 0:
-            qte -= 1
-            yield item
-        else:
-            return
+    return iterable[0:qte]
 
 def tail(qte, iterable):
-    "Yield qte of elements in the given iterable."
-    out = []
-    for item in iterable:
-        out.append(item)
-        if len(out) > qte:
-            out.pop(0)
-    return out
+    bidx = builtins.max(len(iterable) - qte,0)
+    return iterable[bidx:]
         
-
 def skip(qte, iterable ):
     "Skip qte elements in the given iterable, then yield others."
     for item in iterable:
@@ -186,6 +174,9 @@ def add(x):
 
 def first(iterable):
     return next(iter(iterable))
+
+def snd(iterable):
+    return next(next(iter(iterable)))
 
 def rrest(iterable):
     return iterable[1:]

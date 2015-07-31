@@ -1,0 +1,1 @@
+"history  | tail 20 | list2lines > \"test.sh\""
