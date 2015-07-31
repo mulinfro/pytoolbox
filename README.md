@@ -7,8 +7,9 @@
 - block = python expression | command
 - function = python buildin function | udf function | mapped function | composite function
 
-命令(command)是支持io重定向和宏
-表达式可以是一个变量，数据(比如list)，函数调用，构造偏函数，或者block
+
+命令(command)支持三种模式pipe命令， io重定向，宏   
+表达式可以是一个变量，数据(比如list)，函数调用，偏函数，或者block   
 数据支持：字符串，表，字典
 函数包含：python内置函数，用户自定义函数，复合函数，mapped函数(= map(func,..) )
 
